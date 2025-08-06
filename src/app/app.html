@@ -1,0 +1,92 @@
+<div class="bd">
+  <h1 class="text-al">CRUD OPERATION USING LOCAL STORAGE</h1>
+  <div class="reg">
+
+    <h1>EMPLOYEE REGISTER FORM</h1><br>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">UserName</label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="Userlogin.username">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="text" class="form-control" name="password" [(ngModel)]="Userlogin.password">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Email-Id</label>
+        <input type="text" class="form-control" placeholder="1234 Main St" name="emailid"
+          [(ngModel)]="Userlogin.emailid">
+      </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">Mobile-No</label>
+        <input type="text" class="form-control" name="mobileno" [(ngModel)]="Userlogin.mobileno">
+      </div>
+      <div class="col-12">
+        <label class="form-label">Address</label>
+        <input type="text" class="form-control" placeholder="Apartment, studio, or floor" name="address"
+          [(ngModel)]="Userlogin.address">
+      </div>
+
+      <div class="col-12">
+        <button (click)="onRagister()" class="btn btn-primary">Register</button>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="log">
+
+    <h1>EMPLOYEE LOGIN FORM</h1><br>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">UserName</label>
+        <input type="email" name="username" class="form-control" [(ngModel)]="login.username">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" [(ngModel)]="login.password">
+      </div>
+
+      <div class="col-12">
+        <button (click)="onLogin()" class="btn btn-primary">Sign in</button>
+      </div>
+    </form>
+
+  </div>
+
+  <hr><br>
+  <div class="tbl">
+    <h1>EMPLOYEE REGISTER DATA</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">UserName</th>
+          <th scope="col">password</th>
+          <th scope="col">emailid</th>
+          <th scope="col">mobileno</th>
+          <th scope="col">address</th>
+          <th>UPDATE</th>
+          <th>DELETE</th>
+
+        </tr>
+      </thead>
+
+      @for (item of userRagister; track item) {
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td>{{item.username | uppercase}}</td>
+          <td>{{item.password}}.</td>
+          <td>{{item.emailid | titlecase}}</td>
+          <td>{{item.mobileno}}</td>
+          <td>{{item.address | uppercase}}</td>
+         <td><button class="btn btn-primary">UPDATE</button></td> 
+         <td><button class="btn btn-primary">DELETE</button></td>
+
+        </tr>
+
+      </tbody>}
+    </table>
+  </div>
+</div>
